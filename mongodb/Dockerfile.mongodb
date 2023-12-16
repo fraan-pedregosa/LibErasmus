@@ -1,0 +1,7 @@
+# Usa una imagen base de MongoDB
+FROM mongo:latest
+
+# Expón el puerto por defecto de MongoDB
+EXPOSE 27017
+
+# El comando de inicio se maneja automáticamente

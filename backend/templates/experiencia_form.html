@@ -1,0 +1,92 @@
+{% block content %}
+  <h2>Agregar experiencia</h2>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form method="post" action="{{ url_for('agregar_experiencia') }}">
+    {{ form.csrf_token }}
+    {{ form.hidden_tag() }}
+
+    <label for="autor">Autor: </label>
+    {{ form.autor }}
+    <br>
+
+    <label for="paisDestino">País de destino: </label>
+    {{ form.paisDestino }}
+    <br>
+
+    <label for="ciudadDestino">Ciudad de destino: </label>
+    {{ form.ciudadDestino }}
+    <br>
+
+    <label for="universidadDestino">Universidad de destino: </label>
+    {{ form.universidadDestino }}
+    <br>
+
+    <label for="anioMovilidad">Año de movilidad: </label>
+    {{ form.anioMovilidad }}
+    <br>
+
+    <label for="gradoPrincipal">Grado principal:: </label>
+    {{ form.gradoPrincipal }}
+    <br>
+
+    <label for="cursoMovilidad">Año cursado durante la movilidad: </label>
+    {{ form.cursoMovilidad }}
+    <br>
+
+    <label for="idiomaDestino">Idioma del destino: </label>
+    {{ form.idiomaDestino }}
+    <br>
+
+    <label for="idiomaClases">Idioma de las clases: </label>
+    {{ form.idiomaClases }}
+    <br>
+
+    <label for="ambienteEstudiantil">Ambiente Estudiantil:</label>
+    <select id="ambienteEstudiantil" name="ambienteEstudiantil">
+      {% for choice_value, choice_label in form.ambienteEstudiantil.choices %}
+          <option value="{{ choice_value }}">{{ choice_label }}</option>
+      {% endfor %}
+    </select>
+    <br>
+
+    <label for="nivelEconomico">Nivel económico:</label>
+    <select id="nivelEconomico" name="nivelEconomico" required>
+      {% for choice_value, choice_label in form.nivelEconomico.choices %}
+          <option value="{{ choice_value }}">{{ choice_label }}</option>
+      {% endfor %}
+    </select>
+    <br>
+
+    <label for="becaPercibida">Beca percibida: </label>
+    {{ form.becaPercibida }}
+    <br>
+
+    <label for="gastoPromedioMensual">Gasto promedio mensual: </label>
+    {{ form.gastoPromedioMensual }}
+    <br>
+
+    <label for="calidadConclusion">Calidad de la conclusión: </label>
+    <select id="calidadConclusion" name="calidadConclusion" required>
+      {% for choice_value, choice_label in form.calidadConclusion.choices %}
+          <option value="{{ choice_value }}">{{ choice_label }}</option>
+      {% endfor %}
+    </select>
+    <br>
+
+    <label for="imagenesDestino">Imágenes del destino: </label>
+    {{ form.imagenesDestino }}
+    <br>
+
+            
+    <input type="submit" value="Agergar experiencia">
+  </form>
+{% endblock %}

@@ -1,0 +1,239 @@
+[
+  {
+    "id": "6576d6610d02e0a2fb0af0b7",
+    "autor": "Alejandro Rodríguez Espinosa",
+    "paisDestino": "Italia",
+    "ciudadDestino": "Bologna",
+    "universidadDestino": "Università di Bologna",
+    "anioMovilidad": 2018,
+    "gradoPrincipal": "Educación Primaria",
+    "cursoMovilidad": "Tercero",
+    "idiomaDestino": "Italiano",
+    "idiomaClases": "Italiano",
+    "ambienteEstudiantil": [
+      "Fiesta",
+      "Deportivo",
+      "Cultural",
+      "Internacional"
+    ],
+    "becaPercibida": 4000,
+    "nivelEconomico": "medio",
+    "calidadConclusion": "muy buena",
+    "imagenesDestinoLink": [
+      "https://drive.google.com/file/d/13vCSPKa4z6vgyfcKULYkWJDarbCh3Nsi/view"
+    ],
+    "imagenesDestino": [
+      "6576d6610d02e0a2fb0af0b7_img4_1702291028.jpeg",
+      "6576d6610d02e0a2fb0af0b7_img2_1702291368.jpeg",
+      "6576d6610d02e0a2fb0af0b7_img3_1702291432.jpeg",
+      "6576d6610d02e0a2fb0af0b7_img4_1702291525.jpeg",
+      "6576d6610d02e0a2fb0af0b7_img5_1702291532.jpeg",
+      "6576d6610d02e0a2fb0af0b7_img6_1702291817.jpeg"
+    ],
+    "imagenes": []
+  },
+  {
+    "id": "6576d6610d02e0a2fb0af0b8",
+    "autor": "Arturo Barrera Delgado",
+    "paisDestino": "Italia",
+    "ciudadDestino": "Bari",
+    "universidadDestino": "Università di Bari",
+    "anioMovilidad": 2018,
+    "gradoPrincipal": "Educación Primaria",
+    "idiomaDestino": "Italiano",
+    "idiomaClases": "Italiano",
+    "ambienteEstudiantil": [
+      "Cultural",
+      "Internacional"
+    ],
+    "calidadConclusion": "buena"
+  },
+  {
+    "id": "6576d6610d02e0a2fb0af0b9",
+    "autor": "Andrea García Gómez",
+    "paisDestino": "Italia",
+    "ciudadDestino": "Cagliari",
+    "universidadDestino": "Università di Studio di Cagliari",
+    "anioMovilidad": 2018,
+    "gradoPrincipal": "ADE",
+    "cursoMovilidad": "Tercero",
+    "idiomaDestino": "Italiano",
+    "idiomaClases": "Italiano",
+    "ambienteEstudiantil": [
+      "Internacional",
+      "Fiesta"
+    ],
+    "becaPercibida": 3500,
+    "nivelEconomico": "medio",
+    "gastoPromedioMensual": 600,
+    "calidadConclusion": "muy buena",
+    "imagenesDestinoLink": [
+      "https://drive.google.com/file/d/1JbX9cP5AOM0xZ9n5CtXbE81qQEGIrNUQ/view",
+      "https://drive.google.com/file/d/1MjEmKpOkJBK4t03zyrRrtB56Bq2sOLRo/view"
+    ]
+  },
+  {
+    "id": "6576d6610d02e0a2fb0af0ba",
+    "autor": "Cristina Sánchez García",
+    "paisDestino": "Italia",
+    "ciudadDestino": "Bari",
+    "universidadDestino": "Università di Bari",
+    "anioMovilidad": 2019,
+    "gradoPrincipal": "Educación Social",
+    "idiomaDestino": "Italiano",
+    "idiomaClases": "Italiano",
+    "ambienteEstudiantil": [
+      "Internacional"
+    ],
+    "becaPercibida": 4000,
+    "nivelEconomico": "medio",
+    "gastoPromedioMensual": 600,
+    "calidadConclusion": "buena",
+    "imagenesDestinoLink": [
+      "https://drive.google.com/file/d/1TlSuAGIvm9o3KbVuSkIlXyvUN9Jwgn60/view",
+      "https://drive.google.com/file/d/1uVRB1h5wGRkWAHbSSebd4sio4F_UMLkg/view"
+    ]
+  },
+  {
+    "id": "6576d6610d02e0a2fb0af0bb",
+    "autor": "Sandra Murcia Hossein",
+    "paisDestino": "Italia",
+    "ciudadDestino": "Bari",
+    "universidadDestino": "Università degli Studi di Bari Aldo Moro",
+    "anioMovilidad": 2018,
+    "gradoPrincipal": "Educación Infantil",
+    "cursoMovilidad": "Tercero",
+    "idiomaDestino": "Italiano",
+    "idiomaClases": "Italiano",
+    "ambienteEstudiantil": [
+      "Internacional",
+      "Fiesta",
+      "Cultural"
+    ],
+    "becaPercibida": 2500,
+    "nivelEconomico": "medio",
+    "calidadConclusion": "buena",
+    "imagenesDestinoLink": [
+      "https://drive.google.com/file/d/1zB13JkmwqVVCEfCHua8WMhKIdLcsTEBO/view",
+      "https://drive.google.com/file/d/1JVqzLhCVdCFCzanYVXmT_0__eHWLZ9CO/view",
+      "https://drive.google.com/file/d/1AQtAzdexyT75jKYF_dBGHye_ZBHnYYOd/view"
+    ]
+  },
+  {
+    "id": "6576d6610d02e0a2fb0af0bc",
+    "autor": "Rubén Millanes de Reyes",
+    "paisDestino": "Italia",
+    "ciudadDestino": "Bologna",
+    "universidadDestino": "Alma Mater Studiorum",
+    "anioMovilidad": 2021,
+    "gradoPrincipal": "Educación Primaria",
+    "idiomaDestino": "Italiano",
+    "idiomaClases": "Italiano",
+    "ambienteEstudiantil": [
+      "Internacional",
+      "Fiesta",
+      "Cultural"
+    ],
+    "becaPercibida": 3800,
+    "nivelEconomico": "medio",
+    "gastoPromedioMensual": 200,
+    "calidadConclusion": "buena",
+    "imagenesDestinoLink": [
+      "https://drive.google.com/file/d/1zgE7eGJqjNwDNJMdaXi1SvHFFUCsIRFl/view",
+      "https://drive.google.com/file/d/1u55cWN84RuCwKUqgQwu07SR3tX6k7bu6/view",
+      "https://drive.google.com/file/d/16wWOt3jcLIa5Qdigeiw7DaGAJihOwO2W/view"
+    ]
+  },
+  {
+    "id": "6576d6610d02e0a2fb0af0bd",
+    "autor": "Yaiza de la Rubia Merino",
+    "paisDestino": "Italia",
+    "ciudadDestino": "Bologna",
+    "universidadDestino": "Università degli Studio di Bologna",
+    "anioMovilidad": 2016,
+    "gradoPrincipal": "Educación Primaria",
+    "idiomaDestino": "Italiano",
+    "idiomaClases": "Italiano",
+    "ambienteEstudiantil": [
+      "Cultural",
+      "Fiesta"
+    ],
+    "nivelEconomico": "medio",
+    "gastoPromedioMensual": 700,
+    "calidadConclusion": "buena",
+    "imagenesDestinoLink": [
+      "https://drive.google.com/file/d/1T7OIfzZbqK3y-evlvrwa5XlB_P1NE_XA/view",
+      "https://drive.google.com/file/d/1xPOqS8RLKGazady5Ieu7qEuZRw1kCN1S/view",
+      "https://drive.google.com/file/d/1TBenm9CmLF3HIQDUlVzFV4j_oaDl60iF/view"
+    ]
+  },
+  {
+    "id": "6576d6610d02e0a2fb0af0be",
+    "autor": "Ana Isabel Gómez Puerto",
+    "paisDestino": "Italia",
+    "ciudadDestino": "Cassino",
+    "universidadDestino": "Università degli Studio di Cassino",
+    "anioMovilidad": 2019,
+    "gradoPrincipal": "Educación Primaria",
+    "cursoMovilidad": "Tercero",
+    "idiomaDestino": "Italiano",
+    "idiomaClases": "Italiano",
+    "ambienteEstudiantil": [
+      "Tranquilo"
+    ],
+    "nivelEconomico": "medio",
+    "calidadConclusion": "buena",
+    "imagenesDestinoLink": [
+      "https://drive.google.com/file/d/1LAg127YdWcx4Cne8N0lrM2WWGS91a4CO/view",
+      "https://drive.google.com/file/d/1cf4eG0sawFTEiygZ1OP6ld41sfRfmMiN/view"
+    ]
+  },
+  {
+    "id": "6576d6610d02e0a2fb0af0bf",
+    "autor": "Paula Blanco Ramírez",
+    "paisDestino": "Rumanía",
+    "ciudadDestino": "Cluj-Napoca",
+    "universidadDestino": " Univesitatea Babeș-Bolyai",
+    "anioMovilidad": 2019,
+    "gradoPrincipal": "Educación Primaria",
+    "idiomaDestino": "Rumano",
+    "idiomaClases": "Rumano",
+    "ambienteEstudiantil": [
+      "Internacional",
+      "Fiesta",
+      "Cultural"
+    ],
+    "becaPercibida": 3000,
+    "nivelEconomico": "bajo",
+    "gastoPromedioMensual": 300,
+    "calidadConclusion": "muy buena",
+    "imagenesDestinoLink": [
+      "https://drive.google.com/file/d/1WxEpdqMBS06E-HWbA7gPL0tjE5yXEmng/view",
+      "https://drive.google.com/file/d/14R7ptKn5FFqWAN8RaOftF1TFzpWbwXoG/view",
+      "https://drive.google.com/file/d/1ELYXdbmmAcZRcr4sqbTmv66gHdGhrwQZ/view"
+    ]
+  },
+  {
+    "id": "6576d6610d02e0a2fb0af0c0",
+    "autor": "Blanca Mateos Chernichero",
+    "paisDestino": "Rumanía",
+    "ciudadDestino": "Cluj-Napoca",
+    "universidadDestino": "Universidad de Cluj-Napoca",
+    "anioMovilidad": 2019,
+    "gradoPrincipal": "Educación Infantil",
+    "cursoMovilidad": "Tercero",
+    "idiomaDestino": "Rumano",
+    "idiomaClases": "Rumano",
+    "ambienteEstudiantil": [
+      "Cultural",
+      "Fiesta"
+    ],
+    "becaPercibida": 4000,
+    "nivelEconomico": "bajo",
+    "calidadConclusion": "buena",
+    "imagenesDestinoLink": [
+      "https://drive.google.com/file/d/10b146PJR6-JZr14ZtLjgEIWgHMSNt441/view",
+      "https://drive.google.com/file/d/1aUcBPbSG8MWMCLTZn6uo3YB_Ny8QpBCH/view"
+    ]
+  }
+]

@@ -1,0 +1,84 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: frontend
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - liberamus
+    volumes:
+      - imagenes_experiencias:/ruta/compartida
+
+  backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+    networks:
+      - liberamus
+    volumes:
+      - imagenes_experiencias:/ruta/compartida
+
+  mongodb:
+    build:
+      context: mongodb
+      dockerfile: Dockerfile.mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+    networks:
+      - liberamus
+
+  es01:
+    image: "docker.elastic.co/elasticsearch/elasticsearch:8.11.1"
+    container_name: es02
+    ports:
+      - 9200:9200
+      - 9300:9300
+    volumes:
+      - imagenes_experiencias:/img/
+      - ./elasticsearch/esdata01:/usr/share/elasticsearch/data
+    environment:
+      - node.name=es01
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01
+      - cluster.initial_master_nodes=es01
+      # - bootstrap.memory_lock=true
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - http.cors.enabled=true
+      - http.cors.allow-origin="*"
+      - http.cors.allow-methods=OPTIONS, HEAD, GET, POST, PUT, DELETE
+      - http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization
+      - http.cors.allow-credentials=true
+    networks:
+      - liberamus
+
+
+  #kibana:
+  #  image: "docker.elastic.co/kibana/kibana:8.11.1"
+  #  container_name: kibana
+  #  ports:
+  #    - 5601:5601
+  #  environment:
+  #    - ELASTICSEARCH_HOSTS=http://es01:9200
+  #    - xpack.security.enabled=false
+  #  networks:
+  #    - liberamus
+
+networks:
+  liberamus:
+    driver: bridge
+
+volumes:
+  mongodb-data:
+  imagenes_experiencias:

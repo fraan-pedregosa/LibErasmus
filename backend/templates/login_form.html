@@ -1,0 +1,28 @@
+{% block content %}
+  <h2>Iniciar Sesión</h2>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form method="post" action="{{ url_for('login') }}">
+    {{ form.csrf_token }}
+    {{ form.hidden_tag() }}
+
+    <label for="email">Email: </label>
+    {{ form.email }}
+    <br>
+
+    <label for="password">Contraseña: </label>
+    {{ form.password }}
+    <br>
+
+    <input type="submit" value="Iniciar Sesión">
+  </form>
+  <p>¿No tienes una cuenta? <a href="{{ url_for('registro') }}">Regístrate aquí</a>.</p>
+{% endblock %}

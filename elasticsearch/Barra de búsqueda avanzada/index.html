@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Erasmus Experiences Search</title>
+    <style>
+      /* Add your custom styles here */
+      .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .fade-out {
+        animation: fadeOut 0.5s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translate(0, -50px);
+        }
+        to {
+          transform: translate(0, 0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          transform: translate(0, 0);
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+          transform: translate(0, -50px);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 p-8">
+    <div class="max-w-md mx-auto bg-white p-4 rounded-md shadow-md">
+      <div class="flex relative items-center flex-col">
+        <div class="flex items-center left-0 w-full">
+          <input
+            id="searchText"
+            type="text"
+            placeholder="Search..."
+            class="w-full p-2 border border-gray-300 rounded-md"
+          />
+          <button id="searchButton" class="ml-2 p-1 bg-gray-300 rounded-md">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              viewBox="0 0 24 24"
+            >
+              <title>magnify</title>
+              <path
+                d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"
+              />
+            </svg>
+          </button>
+          <div class="ml-2 relative">
+            <button id="toggleOptions" class="p-1 bg-gray-300 rounded-md">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                viewBox="0 0 24 24"
+              >
+                <title>dots-vertical</title>
+                <path
+                  d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          id="options"
+          class="hidden w-full top-full right-0 mt-4 bg-white border border-gray-300 rounded-md shadow-md fade-out"
+        >
+          <!-- Country Buttons -->
+          <div class="p-2">
+            <label class="block text-gray-700">Pais destino:</label>
+            <div class="mt-1 flex">
+              <button
+                class="mr-2 p-2 border border-gray-300 rounded-md country-button"
+              >
+                Italia
+              </button>
+              <button
+                class="mr-2 p-2 border border-gray-300 rounded-md country-button"
+              >
+                Bulgaria
+              </button>
+              <button
+                class="mr-2 p-2 border border-gray-300 rounded-md country-button"
+              >
+                Rumanía
+              </button>
+              <button
+                class="mr-2 p-2 border border-gray-300 rounded-md country-button"
+              >
+                Portugal
+              </button>
+              <!-- Add more country buttons as needed -->
+            </div>
+          </div>
+          <!-- Economic level selector -->
+          <div class="p-2">
+            <label class="block text-gray-700">Nivel económico:</label>
+            <div class="mt-1 flex">
+              <button
+                class="mr-2 p-2 border border-gray-300 rounded-md economic-level-button"
+              >
+                Bajo
+              </button>
+              <button
+                class="mr-2 p-2 border border-gray-300 rounded-md economic-level-button"
+              >
+                Medio
+              </button>
+              <button
+                class="p-2 border border-gray-300 rounded-md economic-level-button"
+              >
+                Alto
+              </button>
+              <!-- Add more grade buttons as needed -->
+            </div>
+          </div>
+          <!-- Grade Selector -->
+          <div class="p-2">
+            <label class="block text-gray-700">Grado:</label>
+            <div class="mt-1 flex flex-wrap">
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md grade-button"
+              >
+                Educación Primaria
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md grade-button"
+              >
+                Educación Social
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md grade-button"
+              >
+                Ingeniería Informática
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md grade-button"
+              >
+                Educación Infantil
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md grade-button"
+              >
+                ADE
+              </button>
+              <!-- Add more grade buttons as needed -->
+            </div>
+          </div>
+          <!--Main grade year-->
+          <div class="p-2">
+            <label class="block text-gray-700">Curso Movilidad:</label>
+            <div class="mt-1 flex flex-wrap">
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md year-button"
+              >
+                Tercero
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md year-button"
+              >
+                Cuarto
+              </button>
+              <!-- Add more grade buttons as needed -->
+            </div>
+          </div>
+          <!--Ambient Selector-->
+          <div class="p-2">
+            <label class="block text-gray-700">Ambiente:</label>
+            <div class="mt-1 flex flex-wrap">
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md ambient-button"
+              >
+                Fiesta
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md ambient-button"
+              >
+                Deportivo
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md ambient-button"
+              >
+                Cultural
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md ambient-button"
+              >
+                Internacional
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md ambient-button"
+              >
+                Tranquilo
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md ambient-button"
+              >
+                Viajes
+              </button>
+              <!-- Add more grade buttons as needed -->
+            </div>
+          </div>
+
+          <!--Language selector-->
+          <div class="p-2">
+            <label class="block text-gray-700">Idioma de las clases:</label>
+            <div class="mt-1 flex flex-wrap">
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md language-button"
+              >
+                Inglés
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md language-button"
+              >
+                Español
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md language-button"
+              >
+                Italiano
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md language-button"
+              >
+                Francés
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md language-button"
+              >
+                Rumano
+              </button>
+              <button
+                class="mr-2 mt-2 p-2 border border-gray-300 rounded-md language-button"
+              >
+                Portugués
+              </button>
+              <!-- Add more grade buttons as needed -->
+            </div>
+          </div>
+          <!-- Money Interval -->
+          <div class="p-2">
+            <label class="block text-gray-700">Gasto promedio mensual:</label>
+            <div class="flex">
+              <input
+                type="number"
+                placeholder="Mínimo"
+                class="mt-1 p-2 border border-gray-300 rounded-l-md w-1/2"
+                id="minMoney"
+              />
+              <input
+                type="number"
+                placeholder="Máximo"
+                class="mt-1 p-2 border border-gray-300 rounded-r-md w-1/2"
+                id="maxMoney"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      //   fetch("http://localhost:9200/experiencias/_search")
+      //     .then((response) => response.json())
+      //     .then((data) => {
+      //       const hits = data.hits.hits;
+      //       for (let experience of hits) {
+      //         console.log(experience._source);
+      //       }
+      //     });
+      let countries = [];
+      let economicLevels = [];
+      let grades = [];
+      let years = [];
+      let ambients = [];
+      let languages = [];
+
+      document
+        .getElementById("toggleOptions")
+        .addEventListener("click", function () {
+          const options = document.getElementById("options");
+
+          options.classList.toggle("fade-in");
+          options.classList.toggle("fade-out");
+
+          // Toggle the 'hidden' class if the element is currently visible
+          if (options.classList.contains("fade-in")) {
+            options.classList.remove("hidden");
+          }
+
+          // options.classList.toggle('hidden');
+        });
+      // Listen for the end of the animation
+      options.addEventListener("animationend", function () {
+        // Hide the element after the animation is complete
+        if (!options.classList.contains("fade-in")) {
+          options.classList.add("hidden");
+        }
+      });
+
+      const searchButton = document.getElementById("searchButton");
+      searchButton.addEventListener("click", function () {
+        const searchText = document.getElementById("searchText").value;
+        let query = {
+          size: 10000,
+          query: {
+            bool: {
+              must: [
+                {
+                  query_string: {
+                    query: `*${searchText}*`,
+                  },
+                },
+              ],
+            },
+          },
+        };
+
+        // Insert countries into query
+        if (countries.length != 0) {
+          let countriesBool = {
+            bool: {
+              should: [],
+            },
+          };
+          for (country of countries) {
+            countriesBool.bool.should.push({
+              match: {
+                paisDestino: country,
+              },
+            });
+          }
+          query.query.bool.must.push(countriesBool);
+        }
+
+        // Insert economic levels into query
+        if (economicLevels.length != 0) {
+          let economicLevelsBool = {
+            bool: {
+              should: [],
+            },
+          };
+          for (economicLevel of economicLevels) {
+            economicLevelsBool.bool.should.push({
+              match: {
+                nivelEconomico: economicLevel,
+              },
+            });
+          }
+          query.query.bool.must.push(economicLevelsBool);
+        }
+
+        // Insert grades into query
+        if (grades.length != 0) {
+          let gradesBool = {
+            bool: {
+              should: [],
+            },
+          };
+          for (grade of grades) {
+            gradesBool.bool.should.push({
+              match: {
+                "gradoPrincipal.keyword": grade,
+              },
+            });
+          }
+          query.query.bool.must.push(gradesBool);
+        }
+
+        // Insert years into query
+        if (years.length != 0) {
+          let yearsBool = {
+            bool: {
+              should: [],
+            },
+          };
+          for (year of years) {
+            yearsBool.bool.should.push({
+              match: {
+                "cursoMovilidad": year,
+              },
+            });
+          }
+          query.query.bool.must.push(yearsBool);
+        }
+
+        // Insert ambients into query
+        if (ambients.length != 0) {
+          let ambientsBool = {
+            bool: {
+              must: [],
+            },
+          };
+          for (ambient of ambients) {
+            ambientsBool.bool.must.push({
+              match: {
+                "ambienteEstudiantil": ambient,
+              },
+            });
+          }
+          query.query.bool.must.push(ambientsBool);
+        }
+
+        // Insert languages into query
+        if (languages.length != 0) {
+          let languagesBool = {
+            bool: {
+              should: [],
+            },
+          };
+          for (language of languages) {
+            languagesBool.bool.should.push({
+              match: {
+                "idiomaClases": language,
+              },
+            });
+          }
+          query.query.bool.must.push(languagesBool);
+        }
+
+        // Insert interval of money into query
+        let minMoney = "0";
+        if (document.getElementById("minMoney").value == ""){
+          minMoney = "0";
+        }else{
+          minMoney = document.getElementById("minMoney").value;
+        }
+        const maxMoney = document.getElementById("maxMoney").value;
+        if (minMoney != "" && maxMoney != "") {
+          query.query.bool.must.push({
+            range: {
+              gastoPromedioMensual: {
+                gte: minMoney,
+                lte: maxMoney,
+              },
+            },
+          });
+        }
+
+        // Print the query
+        console.log(JSON.stringify(query));
+
+        fetch("http://localhost:9200/experiencias/_search", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(query),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            const hits = data.hits.hits;
+            for (let experience of hits) {
+              console.log(experience._source);
+            }
+          });
+      });
+
+      // Country Button Click Handling
+      const countryButtons = document.querySelectorAll(".country-button");
+      countryButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          // Toggle background color on click
+          this.classList.toggle("bg-gray-500");
+          // Add or remove the country from the list
+          if (countries.includes(this.innerText)) {
+            countries = countries.filter(
+              (country) => country !== this.innerText
+            );
+          } else {
+            countries.push(this.innerText);
+          }
+        });
+      });
+
+      // Grade Button Click Handling
+      const gradeButtons = document.querySelectorAll(".grade-button");
+      gradeButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          // Toggle background color on click
+          this.classList.toggle("bg-gray-500");
+          // Add or remove the grade from the list
+          if (grades.includes(this.innerText)) {
+            grades = grades.filter((grade) => grade !== this.innerText);
+          } else {
+            grades.push(this.innerText);
+          }
+        });
+      });
+
+      // Economic Level Button Click Handling
+      const economicLevelButtons = document.querySelectorAll(
+        ".economic-level-button"
+      );
+      economicLevelButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          // Toggle background color on click
+          this.classList.toggle("bg-gray-500");
+          // Add or remove the country from the list
+          if (economicLevels.includes(this.innerText.toLowerCase())) {
+            economicLevels = economicLevels.filter(
+              (economicLevel) => economicLevel !== this.innerText.toLowerCase()
+            );
+          } else {
+            economicLevels.push(this.innerText.toLowerCase());
+          }
+        });
+      });
+
+      // Year Button Click Handling
+      const yearButtons = document.querySelectorAll(".year-button");
+      yearButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          // Toggle background color on click
+          this.classList.toggle("bg-gray-500");
+          // Add or remove the country from the list
+          if (years.includes(this.innerText)) {
+            years = years.filter(
+              (year) => year !== this.innerText
+            );
+          } else {
+            years.push(this.innerText);
+          }
+        });
+      });
+
+      // Ambient Button Click Handling
+      const ambientButtons = document.querySelectorAll(".ambient-button");
+      ambientButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          // Toggle background color on click
+          this.classList.toggle("bg-gray-500");
+          // Add or remove the country from the list
+          if (ambients.includes(this.innerText)) {
+            ambients = ambients.filter(
+              (ambient) => ambient !== this.innerText
+            );
+          } else {
+            ambients.push(this.innerText);
+          }
+        });
+      });
+
+      // Language Button Click Handling
+      const languageButtons = document.querySelectorAll(".language-button");
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          // Toggle background color on click
+          this.classList.toggle("bg-gray-500");
+          // Add or remove the country from the list
+          if (languages.includes(this.innerText)) {
+            languages = languages.filter(
+              (language) => language !== this.innerText
+            );
+          } else {
+            languages.push(this.innerText);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

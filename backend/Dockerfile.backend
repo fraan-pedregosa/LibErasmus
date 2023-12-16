@@ -1,0 +1,22 @@
+# Usa una imagen base de Python con Gunicorn
+FROM python:3.8
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Copia los archivos necesarios
+COPY requirements.txt .
+
+RUN pip install gunicorn
+
+# Instala las dependencias
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia el código de la aplicación
+COPY . .
+
+# Expón el puerto 5000 (puerto por defecto de Flask)
+EXPOSE 5000
+
+# Comando para iniciar Gunicorn con el backend Flask
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]

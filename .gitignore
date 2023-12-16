@@ -1,0 +1,8 @@
+elasticsearch/esdata01/indices
+elasticsearch/esdata01/indices/*
+elasticsearch/esdata01
+exclude 
+
+
+elasticsearch/esdata01/*
+elasticsearch/esdata01

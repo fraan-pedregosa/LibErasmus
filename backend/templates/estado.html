@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado de Sesión</title>
+</head>
+<body>
+    <h1>Estado de Sesión</h1>
+    {% if usuario.is_authenticated %}
+        <p>¡Hola {{ usuario.name }}! Estás logeado.</p>
+        <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+    {% else %}
+        <p>No estás logeado.</p>
+        <a href="{{ url_for('login') }}">Iniciar sesión</a>
+    {% endif %}
+</body>
+</html>

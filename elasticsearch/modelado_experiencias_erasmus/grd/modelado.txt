@@ -1,0 +1,50 @@
+
+
+¿obligatoridad (required) de cursoMovilidad, calidadConclusion, gastoPromedioMensual, imagenesDestino?
+
+----------------------------------------------------------------------------------------------------------------------------
+
+el atributo "nivelEconomico" se rige conforme a los grupos establecidos para la concesión de la ayuda económica europea:
+
+Grupo 1 (nivel económico = "alto")
+
+Dinamarca, Finlandia, Irlanda, Islandia, Liechtenstein, Luxemburgo, Noruega, Suecia
+
+Grupo 2 (nivel económico = "medio")
+
+Alemania, Austria, Bélgica, Chipre,   España, Francia, Grecia, Italia, Malta, Países Bajos y Portugal
+
+Grupo 3 (nivel económico = "bajo")
+
+República de Macedonia del Norte, Bulgaria, Croacia, Eslovaquia, Eslovenia, Estonia, Hungría, Letonia, Lituania, Polonia, República Checa, Rumanía y Turquía
+
+----------------------------------------------------------------------------------------------------------------------------
+
+La correctitud del modelado .json de la experiencias puede comprobarse con ejecutando el script que se incluye
+
+    python3 script_validation.py experiencias.json
+
+----------------------------------------------------------------------------------------------------------------------------
+
+,
+    {
+      "autor": "",
+      "paisDestino": "",
+      "ciudadDestino": "",
+      "universidadDestino":  "",
+      "anioMovilidad": ,
+      "gradoPrincipal": "",
+      "cursoMovilidad": "",
+      "idiomaDestino": "",
+      "idiomaClases": "",
+      "ambienteEstudiantil": ["", ""],
+      "becaPercibida": ,
+      "nivelEconomico" :"",
+      "gastoPromedioMensual": ,
+      "calidadConclusion": "",
+      "imagenesDestino": ["", ""]
+    }
+
+
+
+    // Manuel Urbano --> fotos en .zip

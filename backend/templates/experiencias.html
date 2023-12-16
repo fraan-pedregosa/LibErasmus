@@ -1,0 +1,37 @@
+<!-- templates/experiencias.html -->
+
+{% block title %}Todas las Experiencias{% endblock %}
+
+{% block content %}
+<p>Debug: {{ current_user.favoritas }}</p>  
+  {% if current_user.is_admin %}
+    <p><a href="{{ url_for('agregar_experiencia') }}">Agregar nueva experiencia</a></p>
+  {% endif %}
+  <p><a href="{{ url_for('experiencias_favoritas') }}">Ver experiencias favoritas</a></p>
+  <h2>Todas las Experiencias</h2>
+  {% if experiencias %}
+    <ul>
+      {% for experiencia in experiencias %}
+        <li>
+          <h3>{{ experiencia.autor }}</h3>
+          <p><strong>País Destino:</strong> {{ experiencia.paisDestino }}</p>
+          <p><strong>Ciudad Destino:</strong> {{ experiencia.ciudadDestino }}</p>
+          <p><strong>Universidad Destino:</strong> {{ experiencia.universidadDestino }}</p>
+          <!-- Agrega más campos según sea necesario -->
+          {% if experiencia._id in current_user.favoritas %}
+            <p><a href="{{ url_for('remove_favorita', experiencia_id=experiencia._id) }}">Eliminar de favoritos</a></p>
+          {% else %}
+            <p><a href="{{ url_for('add_favorita', experiencia_id=experiencia._id) }}">Agregar a Favoritas</a></p>
+          {% endif %}
+
+          {% if current_user.is_admin %}
+            <p><a href="{{ url_for('eliminar_experiencia', experiencia_id=experiencia._id) }}">Eliminar experiencia</a></p>
+          {% endif %}
+          
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay experiencias disponibles.</p>
+  {% endif %}
+{% endblock %}

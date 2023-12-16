@@ -1,0 +1,40 @@
+# Usa una imagen base de Node para el frontend
+FROM node:latest as builder
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Copia los archivos de configuración del frontend
+COPY package*.json ./
+
+# Instala las dependencias del frontend
+RUN npm update
+RUN npm install 
+
+# Copia el código del frontend
+COPY . .
+
+# Ejecuta el build del frontend
+RUN npm run build
+
+# Usa una imagen más ligera para servir el frontend
+FROM nginx:latest
+
+# Establece el directorio de trabajo en Nginx
+WORKDIR /usr/share/nginx/html
+
+# Copia los archivos del build del frontend desde el contenedor de builder
+COPY --from=builder /app/dist/ .
+
+# Copia el archivo de configuración de Nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+
+
+# Crea una carpeta en /public/img y crea un enlace simbólico al volumen de Docker
+RUN ln -s /ruta/compartida /usr/share/nginx/html/img
+
+# Expón el puerto 80
+EXPOSE 80
+
+# Comando para iniciar Nginx
+CMD ["nginx", "-g", "daemon off;"]

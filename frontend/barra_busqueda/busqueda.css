@@ -1,0 +1,20 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+#barra {
+    background-color: rgb(19, 119, 185);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 64px;
+    padding: 8px;
+    gap: 16px;
+}

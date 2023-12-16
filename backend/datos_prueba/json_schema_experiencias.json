@@ -1,0 +1,71 @@
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "autor": {
+      "type": "string"
+    },
+    "paisDestino": {
+      "type": "string"
+    },
+    "ciudadDestino": {
+      "type": "string"
+    },
+    "universidadDestino": {
+      "type": "string"
+    },
+    "anioMovilidad": {
+      "type": "integer"
+    },
+    "gradoPrincipal": {
+      "type": "string"
+    },
+    "cursoMovilidad": {
+      "type": "string"
+    },
+    "idiomaDestino": {
+      "type": "string"
+    },
+    "idiomaClases": {
+      "type": "string"
+    },
+    "nivelEconomico": {
+      "type": "string",
+      "enum": ["bajo", "medio", "alto"]
+    },
+    "ambienteEstudiantil": {
+      "type": "array",
+      "items": {"type": "string", "enum": ["Viajes", "Fiesta", "Tranquilo", "Internacional", "Cultural", "Deportivo", "Natural", "Histórico"]}
+    },
+    "becaPercibida": {
+      "type": "number"
+    },
+    "gastoPromedioMensual": {
+      "type": "number"
+    },
+    "calidadConclusion": {
+      "type": "string",
+      "enum": ["muy buena", "buena", "mejorable", "mala"]
+    },
+    "imagenesDestino": {
+      "type": "array",
+      "items": {"type": "string", "format": "uri"}
+    }
+    
+  },
+  "required": [
+    "autor",
+    "paisDestino",
+    "ciudadDestino",
+    "anioMovilidad",
+    "gradoPrincipal",
+    "cursoMovilidad",
+    "idiomaDestino",
+    "idiomaClases",
+    "nivelEconomico",
+    "gastoPromedioMensual",
+    "calidadConclusion",
+    "imagenesDestino"
+  ]
+}
